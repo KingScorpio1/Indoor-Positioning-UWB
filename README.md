@@ -80,12 +80,3 @@ To improve the AI accuracy for your specific room:
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-***
-
-### Key Changes Made:
-1.  **Code Blocks:** Wrapped all commands in ` ```bash ` blocks so they are easy to copy and appear in boxes on GitHub.
-2.  **Hierarchy:** Used proper `##` and `###` headers to create a Table of Contents automatically in GitHub.
-3.  **Horizontal Rules:** Added `***` to separate the header and footer from the main content.
-4.  **List Formatting:** Cleaned up the numbered lists and bullet points for better readability.
-5.  **Installation commands:** Added the `git clone` and `cd` commands which were missing.
