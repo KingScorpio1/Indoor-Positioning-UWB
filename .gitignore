@@ -1,0 +1,17 @@
+# Python temporary files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+
+# Large Data & Models (Recommended to keep these local)
+data/*.csv
+data/models/*.h5
+*.bag
+
+# IDE settings
+.vscode/
+.idea/
