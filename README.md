@@ -31,3 +31,61 @@ uwb_positioning_project/
 ├── data/                 # Training data, CSVs, and Rosbags
 │   └── models/           # Trained .h5 Neural Network models
 └── config.py             # Global settings and anchor coordinates
+```
+
+## ⚙️ Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/uwb-positioning-project.git
+   cd uwb-positioning-project
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *Note: Requires `tensorflow`, `matplotlib`, `minimalmodbus`, `pandas`, `ttkbootstrap`, and `scikit-learn`.*
+
+## 🚦 Usage
+
+1. **Connect Hardware:** Plug in your Master Anchor via USB to your computer.
+2. **Run the Application:**
+   ```bash
+   python main_app.py
+   ```
+3. **Configure the System:**
+   - Select the correct **COM Port** from the dropdown menu.
+   - Switch to the **Anchor Setup** tab to ensure anchor coordinates (A, B, C, D) match your physical environment.
+4. **Start Tracking:** 
+   - Click **Connect**.
+   - Click **Start**. 
+   - Navigate to the **2D View** or **3D View** tabs to see the live tracking.
+
+## 🧠 AI Training Workflow
+To improve the AI accuracy for your specific room:
+
+1. **Data Collection:** Drive a robot equipped with both a UWB Tag and a LiDAR sensor.
+2. **Recording:** Record `rosbags` while covering the entire floor area (aisles, corners, and near interference sources like monitors).
+3. **Preprocessing:** Synchronize UWB distances with LiDAR ground-truth coordinates and save to `data/merged_training_data.csv`.
+4. **Train the Model:**
+   ```bash
+   python data/train_nn.py
+   ```
+5. **Deployment:** The new model will be saved to `data/models/nn_model/` and will be automatically loaded the next time the application starts.
+
+## 📝 Authors
+- **Sule Smith** - *Initial Work & Hardware Integration*
+- **Contributors** - *Special thanks to the contributors listed in the Decawave datasheet for translation and technical support.*
+
+## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+***
+
+### Key Changes Made:
+1.  **Code Blocks:** Wrapped all commands in ` ```bash ` blocks so they are easy to copy and appear in boxes on GitHub.
+2.  **Hierarchy:** Used proper `##` and `###` headers to create a Table of Contents automatically in GitHub.
+3.  **Horizontal Rules:** Added `***` to separate the header and footer from the main content.
+4.  **List Formatting:** Cleaned up the numbered lists and bullet points for better readability.
+5.  **Installation commands:** Added the `git clone` and `cd` commands which were missing.
